@@ -1,6 +1,7 @@
 package com.student.mapper;
 
 import com.student.dto.PostStudentDto;
+import com.student.dto.UpdateStudentDto;
 import com.student.entity.Student;
 import org.springframework.stereotype.Service;
 
@@ -22,4 +23,21 @@ public class StudentMapper {
         student.setStudentId(0L);
         return student;
     }
+
+    public Student updateStudentDto(UpdateStudentDto updateStudentDto) {
+        Student student = new Student(
+                updateStudentDto.firstName(),
+                updateStudentDto.lastName(),
+                updateStudentDto.gender(),
+                updateStudentDto.grade(),
+                updateStudentDto.age(),
+                updateStudentDto.email(),
+                updateStudentDto.phone(),
+                updateStudentDto.address(),
+                updateStudentDto.updateAt(),
+                updateStudentDto.deleteAt()
+        );
+        student.setStudentId(0L);
+        return student;
+    };
 }
